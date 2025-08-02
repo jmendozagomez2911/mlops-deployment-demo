@@ -1,0 +1,4 @@
+author: Jose Mendoza
+model_type: scikit-learn_1.23
+project_name: mlops-deployment-demo
+project_version: v0.1.0
