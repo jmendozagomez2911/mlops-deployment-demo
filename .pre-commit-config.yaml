@@ -3,7 +3,7 @@ repos:
 
 -
   repo: https://github.com/ambv/black
-  rev: 20.8b1
+  rev: 24.4.2
   hooks: 
     - 
       id: black
@@ -15,6 +15,21 @@ repos:
         name: pytests
         entry: pytest src/tests
         language: python
-        additional_dependencies: [pre-commit, pytest, pandas, sklearn, matplotlib]
+        additional_dependencies: [pre-commit, pytest, pandas, scikit-learn, matplotlib]
         always_run: true
         pass_filenames: false
+
+  # 🔹 Limpia outputs y execution_count de .ipynb
+-   repo: https://github.com/kynan/nbstripout
+    rev: 0.7.1
+    hooks:
+      - id: nbstripout
+        # (Opcional) Elimina metadatos extra si quieres
+        # args: ["--extra-keys", "metadata.kernelspec,metadata.language_info"]
+
+  # 🔸 Opcional: aplica Black a notebooks vía nbQA
+-   repo: https://github.com/nbQA-dev/nbQA
+    rev: 1.8.5
+    hooks:
+      - id: nbqa-black
+        additional_dependencies: [black==24.4.2]

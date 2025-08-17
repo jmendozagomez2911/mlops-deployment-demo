@@ -111,3 +111,8 @@ Reproduce the data pipeline:
 ```
 dvc repro
 ```
+
+
+# Commands
+venv\Scripts\activate
+mlflow ui
